@@ -1,0 +1,20 @@
+.menu{
+    background-color: coral;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.menu-logo{
+    height: 50px;
+}
+.menu-item{
+    list-style: none;
+}
+.menu-link{
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+}
