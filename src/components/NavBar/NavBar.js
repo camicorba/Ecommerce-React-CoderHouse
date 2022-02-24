@@ -1,4 +1,5 @@
-import logoh1 from '../images/logoh1.png';
+import logoh1 from '../../images/logoh1.png'
+import CartWidget from './CartWidget'
 import './NavBar.css'
 const NavBar = () => {
     return (
@@ -15,6 +16,9 @@ const NavBar = () => {
                         <a className='menu-link' href='##'>CONTACTO</a>
                     </li>
                 </ul>
+            </div>
+            <div>
+                <CartWidget/>
             </div>
 
         </div>
