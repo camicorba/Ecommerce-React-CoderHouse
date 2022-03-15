@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logoh1 from '../../images/logoh1.png'
 import CartWidget from './CartWidget'
 import './NavBar.css'
@@ -5,16 +6,21 @@ const NavBar = () => {
     return (
         <div className='menu'>
             <div>
-                <img className='menu-logo' alt="logo" src={ logoh1 } />
+                <Link to={'/'}><img className='menu-logo' alt="logo" src={ logoh1 } /></Link>
+
             </div>
             <div>
                 <ul>
-                    <li className='menu-item'>
-                        <a className='menu-link' href='##'>INICIO</a>
-                        <a className='menu-link' href='##'>PRODUCTOS</a>
-                        <a className='menu-link' href='##'>QUIENES SOMOS</a>
-                        <a className='menu-link' href='##'>CONTACTO</a>
-                    </li>
+                <li><Link to={'/'} className='menu-link'>INICIO</Link></li>
+                <li className='menu-item'>
+                    <Link to={'/'} className='menu-link'>PRODUCTOS</Link>
+                    <ul className='submenu'>
+                        <Link to={'category/macetas'} className="submenu-link"><li>MACETAS</li></Link>
+                        <Link to={'category/cocina'} className="submenu-link"><li>COCINA</li></Link>
+                        <Link to={'category/floreros'} className="submenu-link"><li>FLOREROS</li></Link>
+                    </ul>
+                </li>
+                <li><Link to={'/'} className='link'>CONTACTO</Link></li>
                 </ul>
             </div>
             <div>

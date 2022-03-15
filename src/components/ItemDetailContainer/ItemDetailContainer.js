@@ -5,7 +5,9 @@ import ItemDetail from './ItemDetail'
 import getStock from "../herlpers/getStock";
 import stock from "../data/stock";
 import "./ItemDetail.css"
+import { useParams } from "react-router-dom";
 function ItemDetailContainer() {
+    const {idItem} = useParams ()
     const [item, setItem] = useState([])
     const [loading, setLoading] = useState(false) 
 
@@ -13,13 +15,13 @@ function ItemDetailContainer() {
         setLoading(true)
         getStock(stock)
         .then((res) =>{
-            setItem(res.find((item) => item.id ===1)) // buscamos un solo item
+            setItem(res.find((item) => item.id === parseInt (idItem))) // buscamos un solo item
         })
         .catch((err)=>console.log(err))
         .finally(()=>{
             setLoading(false)
         })
-    }, [])
+    }, [idItem])
 
   return (
     <div className='item-detail-container'>
