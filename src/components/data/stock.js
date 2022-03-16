@@ -1,6 +1,7 @@
 const stock = [
     {
-        id: 1,
+        id: '1',
+        item: 'jarron',
         title: "Linea Puntos - Jarron",
         description: "Florero de ceramica realizado con trama puntos",
         price: 4200,
@@ -9,7 +10,8 @@ const stock = [
         category: 'floreros'
     },
     {
-        id: 2,
+        id: '2',
+        item: 'maceta',
         title: "Linea Puntos - Maceta",
         description: "Maceta N°10 de ceramica realizada con trama puntos",
         price: 2500,
@@ -18,7 +20,8 @@ const stock = [
         category: 'macetas'
     },
     {
-        id: 3,
+        id: '3',
+        item: 'taza',
         title: "Linea Puntos - Taza",
         description: "Taza mediana de ceramica realizada con trama puntos",
         price: 1500,
@@ -27,7 +30,8 @@ const stock = [
         category: 'cocina'
     },
     {
-        id: 4,
+        id: '4',
+        item: 'platos',
         title: "Linea puntos - Set de platos",
         description: "Set de platos de 3 tamaños distintos",
         price: 16500,

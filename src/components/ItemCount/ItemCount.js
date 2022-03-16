@@ -13,7 +13,7 @@ function ItemCount ({stock, initial, onAdd}) {
             setCount (count - 1)
         }
     }
-    // const add = () => {
+    // const onAdd = () => {
     //     onAdd(count)
     // }
     return(

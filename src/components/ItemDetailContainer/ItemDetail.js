@@ -1,17 +1,18 @@
 import React from 'react'
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from '../ItemCount/ItemCount'
+import '../ItemCount/ItemCount.css'
 
-const ItemDetail = ({title, description, price, imgUrl, stock}) => {
+const ItemDetail = ({item}) => {
   return (
-    <div className='item-detail'>
+    <div className='item-detail' key={item.id}>
         <div className='detail-img'>
-            <img src={imgUrl} alt={title} />
+            <img src={item.imgUrl} alt={item.title} />
         </div>
         <div className='detail'>
-            <h1 className='detail-title'>{title}</h1>
-            <h2 className='detail-desc'>{description}</h2>
-            <h2 className='detail-price'>${price}</h2>
-            <ItemCount/>
+            <h1 className='detail-title'>{item.title}</h1>
+            <h2 className='detail-desc'>{item.description}</h2>
+            <h2 className='detail-price'>$ {item.price}</h2>
+            <ItemCount stock={8} initial={0}/>
         </div>
     </div>
   )

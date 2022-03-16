@@ -6,6 +6,7 @@
     border-radius: 10px;
     width: 150px;
     margin: auto;
+    background-color: #9fb9bf;
 }
 .contador-control{
     display: flex;

@@ -91,32 +91,3 @@ button{
     background-color: #9fb9bf;
     border-radius: 0px 0px 10px 10px;
 }
-/* 
-    .cargando{
-        display: flex;
-        justify-content: center;
-    }
-
-        .item{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            width: 300px;
-            height: 500px;
-            border: 1px solid black;
-            margin: 2vh;
-           
-            .stock{
-                text-align: center;
-                width: 100%;
-                border-top: 1px solid black;
-            }
-
-            }
-            img{
-                width: 100%;
-            }
-        }
-    }
-} */
