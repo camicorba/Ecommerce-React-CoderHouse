@@ -15,7 +15,7 @@ function ItemDetailContainer() {
         setLoading(true)
         getStock(stock)
         .then((res) =>{
-            setItem(res.find((item) => item.id === parseInt (idItem))) // buscamos un solo item
+            setItem(res.find((Item) => Item.id === parseInt (idItem))) // buscamos un solo item
         })
         .catch((err)=>console.log(err))
         .finally(()=>{
@@ -27,7 +27,7 @@ function ItemDetailContainer() {
     <div className='item-detail-container'>
         {
             loading? 
-            <div className='cargando'>Cargando pagina...</div>
+            <div className="loader"></div>
             :
             <ItemDetail {...item} />
         }

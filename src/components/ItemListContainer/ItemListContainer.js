@@ -31,7 +31,7 @@ function ItemListContainer() {
     <div className='item-list-container'>
         {
             loading? 
-            <div className='cargando'>Cargando pagina...</div>
+            <div className="loader"></div>
             :
             <ItemList items={items} />
         }
