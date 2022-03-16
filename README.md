@@ -12,7 +12,7 @@ La pagina esta realizada en React. Para visualizarla, se debe correr con 'npm st
 Abrir [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
 
 ## Navegabilidad
-
+Ver GIF [https://media.giphy.com/media/qNN9pXd40WghBKPkQj/giphy.gif] (https://media.giphy.com/media/qNN9pXd40WghBKPkQj/giphy.gif)
 ## `npm install react-bootstrap@next bootstrap@5.1.3` 
 Bootstrap en el proyecto
 
