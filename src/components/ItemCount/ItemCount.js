@@ -13,9 +13,6 @@ function ItemCount ({stock, initial, onAdd}) {
             setCount (count - 1)
         }
     }
-    // const onAdd = () => {
-    //     onAdd(count)
-    // }
     return(
         <div className="contador">
             <div className="contador-control">
