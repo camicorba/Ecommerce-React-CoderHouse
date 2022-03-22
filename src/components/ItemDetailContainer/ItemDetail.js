@@ -1,14 +1,18 @@
 import { Button } from 'bootstrap'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../context/cartContext'
 import ItemCount from '../ItemCount/ItemCount'
 import '../ItemCount/ItemCount.css'
 
 const ItemDetail = ({item}) => {
   const [count, setCount] = useState(null)
+  const {agregarCart, cartList} = useCartContext()
   const onAdd = (count) =>{
     setCount(count)
+    agregarCart({...item, cantidad: count })
   }
+  console.log(cartList)
   return (
     <div className='item-detail' key={item.id}>
         <div className='detail-img'>
