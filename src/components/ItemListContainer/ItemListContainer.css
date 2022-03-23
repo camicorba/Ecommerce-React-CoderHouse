@@ -84,10 +84,11 @@ img{
     font-size: 15px;
     font-style: italic;
 }
-button{
+.btn-item{
     width: 100%;
     height: 25px;
-    border-top: 1px solid black;
+    padding: 5px;
+    border: 1px solid black;
     background-color: #9fb9bf;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 2px;
 }

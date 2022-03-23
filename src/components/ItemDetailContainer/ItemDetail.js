@@ -1,4 +1,3 @@
-import { Button } from 'bootstrap'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/cartContext'
@@ -25,7 +24,9 @@ const ItemDetail = ({item}) => {
           {
             count?
             <Link to={'/cart'}>
-              <button> Finalizar compra</button>
+              <div>
+                <button> Finalizar compra</button>
+              </div>
             </Link>
             :
             <ItemCount stock={item.stock} initial={0} onAdd={(onAdd)}/>

@@ -4,14 +4,31 @@ export const useCartContext = () => useContext(CartContext)
 
 function CartContextProvider ({children}) {
     const [cartList, setCartList] = useState([])
+    const isInCart = (id) =>{
+        return cartList.some((item) => item.id === id)
+    }
     const agregarCart = (item) =>{
-        setCartList ([...cartList, item])
+        if (isInCart(item.id)){
+            let itemIndex = cartList.findIndex(prod => prod.id === item.id) //busco el item duplicado en el array
+            cartList[itemIndex].cantidad += item.cantidad //le sumo la cantidad elegida
+        } else {
+            setCartList ([...cartList, item])
+        }
+    }
+    const eliminarItem = (id) =>{
+        setCartList(cartList.filter(item => item.id !== id)) //hago un filtro
+    }
+    const vaciarCart = () =>{
+        setCartList([])
     }
 
     return (
         <CartContext.Provider value={{
             cartList,   //primero const
-            agregarCart //despues agregamos la funciones
+            agregarCart, //despues agregamos la funciones
+            vaciarCart,
+            isInCart,
+            eliminarItem
         }}>
             {children}
         </CartContext.Provider>
