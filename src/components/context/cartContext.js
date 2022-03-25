@@ -21,6 +21,9 @@ function CartContextProvider ({children}) {
     const vaciarCart = () =>{
         setCartList([])
     }
+    const totalCart = () =>{
+        return cartList.reduce((subt, item) => subt = subt+ item.price*item.cantidad, 0)
+    }
 
     return (
         <CartContext.Provider value={{
@@ -28,7 +31,8 @@ function CartContextProvider ({children}) {
             agregarCart, //despues agregamos la funciones
             vaciarCart,
             isInCart,
-            eliminarItem
+            eliminarItem,
+            totalCart
         }}>
             {children}
         </CartContext.Provider>
