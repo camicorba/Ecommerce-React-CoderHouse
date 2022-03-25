@@ -24,6 +24,9 @@ function CartContextProvider ({children}) {
     const totalCart = () =>{
         return cartList.reduce((subt, item) => subt = subt+ item.price*item.cantidad, 0)
     }
+    const totalItem = () => {
+        return cartList.reduce((subi,item)=> subi = subi + item.cantidad,0)
+    }
 
     return (
         <CartContext.Provider value={{
@@ -32,7 +35,8 @@ function CartContextProvider ({children}) {
             vaciarCart,
             isInCart,
             eliminarItem,
-            totalCart
+            totalCart,
+            totalItem
         }}>
             {children}
         </CartContext.Provider>
