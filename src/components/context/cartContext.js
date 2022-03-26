@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect} from "react";
 const CartContext = createContext ([])
 export const useCartContext = () => useContext(CartContext)
 
@@ -21,22 +21,31 @@ function CartContextProvider ({children}) {
     const vaciarCart = () =>{
         setCartList([])
     }
-    const totalCart = () =>{
-        return cartList.reduce((subt, item) => subt = subt+ item.price*item.cantidad, 0)
+    const totalPrice = () =>{
+        let price = 0
+        cartList.forEach(item=> price += item.price * item.cantidad)
+        return price
     }
-    const totalItem = () => {
-        return cartList.reduce((subi,item)=> subi = subi + item.cantidad,0)
+
+    const totalItems = () => {
+        let items = 0
+        cartList.forEach(item=> items+=item.cantidad)
+        return items
     }
+    
+    useEffect(()=>{
+        totalItems()
+    }, [cartList])
 
     return (
         <CartContext.Provider value={{
-            cartList,   //primero const
+            cartList,  //primero use
             agregarCart, //despues agregamos la funciones
             vaciarCart,
             isInCart,
             eliminarItem,
-            totalCart,
-            totalItem
+            totalPrice,
+            totalItems
         }}>
             {children}
         </CartContext.Provider>

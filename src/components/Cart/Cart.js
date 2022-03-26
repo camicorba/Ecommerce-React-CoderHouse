@@ -4,14 +4,14 @@ import { useCartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
 
 function Cart(){
-    const {cartList, vaciarCart, eliminarItem, totalCart} = useCartContext()
+    const {cartList, vaciarCart, eliminarItem, totalPrice} = useCartContext()
     console.log(cartList)
-    console.log(totalCart)
+    console.log(totalPrice)
     if (cartList.length === 0) {
         return (
             <div>
                 <h3>No tenes items agregados</h3>
-                <Link to='/category'><button>Ver productos</button></Link>
+                <Link to='/'><button>Ver productos</button></Link>
             </div>
         )
     }else{
@@ -24,7 +24,7 @@ return (
                 <button className="btn-cart" onClick={()=> eliminarItem(item.id)}>Eliminar</button>
             </div>
             )}
-            <h4>Total de tu compra: $ {totalCart()}</h4>
+            <h4>Total de tu compra: $ {totalPrice()}</h4>
             <button onClick={vaciarCart}>Vaciar Carrito</button>
         </div>
         )
