@@ -2,8 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons"
 import { useCartContext } from "../context/cartContext";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 function CartWidget () {
-    const {cartList, total} = useCartContext()
+    const {cartList, total, totalItems} = useCartContext()
+    useEffect(()=>{
+        totalItems()
+        }, [cartList])
     return(
         <Link to='/cart'>
             {cartList.length === 0?
@@ -15,9 +19,6 @@ function CartWidget () {
             </div>
             }
         </Link>
-
-
-
     )
 }
 export default CartWidget

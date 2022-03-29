@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function Cart(){
     const {cartList, vaciarCart, eliminarItem, totalPrice} = useCartContext()
+    console.log(cartList)
     if (cartList.length === 0) {
         return (
             <div>

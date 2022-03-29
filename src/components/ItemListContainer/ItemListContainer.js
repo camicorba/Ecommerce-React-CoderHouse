@@ -8,29 +8,27 @@ import {collection, getDocs, getFirestore, query, where} from 'firebase/firestor
 
 function ItemListContainer() {
 
-    const [items, setItems] = useState({})
+    const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true) 
 
     const { categoryId } = useParams ();
 
     useEffect(() => {
         const db = getFirestore();
+        const queryCollection = collection(db, 'items')
         if (categoryId) {
-          const queryCollection = collection(db, 'items')
           const queryFilter = query(queryCollection, where('category', '==', categoryId));
           getDocs(queryFilter)
             .then(resp => setItems(resp.docs.map(item=>({id: item.id, ...item.data()}))))
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))
         } else {
-          const queryCollection = collection(db, 'items')
           getDocs(queryCollection)
             .then(resp => setItems(resp.docs.map(item=>({id: item.id, ...item.data()}))))
             .catch(err => console.log(err))
             .finally(()=> setLoading(false))
         }
     }, [categoryId])
-
   return (
     <div className='item-list-container'>
         {

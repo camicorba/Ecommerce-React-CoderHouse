@@ -5,7 +5,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import '../ItemCount/ItemCount.css'
 
 const ItemDetail = ({item}) => {
-  const [count, setCount] = useState(null)
+  const [count, setCount] = useState(0)
   const {agregarCart} = useCartContext()
   const onAdd = (count) =>{
     setCount(count)

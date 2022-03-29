@@ -4,19 +4,9 @@ export const useCartContext = () => useContext(CartContext)
 
 function CartContextProvider ({children}) {
     const [cartList, setCartList] = useState([])
-    const [total, setTotal] = useState([0])
+    const [total, setTotal] = useState(0)
     const isInCart = (id) =>{
         return cartList.some((item) => item.id === id)
-    }
-    const agregarCart = (item) =>{
-        totalItems()
-        if (isInCart(item.id)){
-            let itemIndex = cartList.findIndex(prod => prod.id === item.id) //busco el item duplicado en el array
-            cartList[itemIndex].cantidad += item.cantidad //le sumo la cantidad elegida
-        } else {
-            setCartList ([...cartList, item])
-
-        }
     }
     const eliminarItem = (id) =>{
         setCartList(cartList.filter(item => item.id !== id)) //hago un filtro
@@ -29,16 +19,25 @@ function CartContextProvider ({children}) {
         cartList.forEach(item=> price += item.price * item.cantidad)
         return price
     }
-
     const totalItems = () => {
-        let items = 0
-        cartList.forEach(item=> items+=item.cantidad)
-        setTotal(items)
+        setTotal(cartList.reduce((sum, item)=> sum + item.cantidad, 0))
+        // let qitems = 0
+        // cartList.forEach(item=> qitems+=item.cantidad)
+        // return qitems
     }
-    useEffect(() => {
-        totalItems()
-    }, [cartList])
-    
+    // const actualtotalItems = (id, cantidad) => {
+    //     cartList.find(item => item.id === id).cantidad += cantidad
+    // }
+    const agregarCart = (item) =>{
+        if (isInCart(item.id)){
+            let itemIndex = cartList.findIndex(prod => prod.id === item.id) //busco el item duplicado en el array
+            cartList[itemIndex].cantidad += item.cantidad //le sumo la cantidad elegida
+        } else {
+            setCartList ([...cartList, item]) // aca no deberia haber referencia a la cantidad del item?
+            totalItems()
+        }
+    }
+
     return (
         <CartContext.Provider value={{
             cartList,  //primero use

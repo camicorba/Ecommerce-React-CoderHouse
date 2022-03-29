@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 function ItemDetailContainer() {
     const {idItem} = useParams ()
-    const [item, setItem] = useState({})
+    const [item, setItem] = useState([])
     const [loading, setLoading] = useState(true) 
 
     useEffect(()=>{
