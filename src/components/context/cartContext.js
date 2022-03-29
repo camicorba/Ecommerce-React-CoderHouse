@@ -4,7 +4,7 @@ export const useCartContext = () => useContext(CartContext)
 
 function CartContextProvider ({children}) {
     const [cartList, setCartList] = useState([])
-    const [total, setTotal] = useState(null)
+    const [total, setTotal] = useState([0])
     const isInCart = (id) =>{
         return cartList.some((item) => item.id === id)
     }
@@ -17,7 +17,6 @@ function CartContextProvider ({children}) {
             setCartList ([...cartList, item])
 
         }
-
     }
     const eliminarItem = (id) =>{
         setCartList(cartList.filter(item => item.id !== id)) //hago un filtro

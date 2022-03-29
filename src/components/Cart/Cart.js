@@ -16,8 +16,8 @@ function Cart(){
 return (
         <div className="cart">
             <h2>Detalle de tu compra</h2>
-            {cartList.map (item => 
-            <div className="item-cart">
+            {cartList.map (item => //agregar key dentro de li
+            <div className="item-cart" key={item.id}>
                 <li> Producto: {item.title} Precio: $ {item.price} Cantidad: {item.cantidad}</li>
                 <button className="btn-cart" onClick={()=> eliminarItem(item.id)}>Eliminar</button>
             </div>

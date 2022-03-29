@@ -6,12 +6,11 @@ import '../ItemCount/ItemCount.css'
 
 const ItemDetail = ({item}) => {
   const [count, setCount] = useState(null)
-  const {agregarCart, cartList} = useCartContext()
+  const {agregarCart} = useCartContext()
   const onAdd = (count) =>{
     setCount(count)
     agregarCart({...item, cantidad: count })
   }
-  console.log(cartList)
   return (
     <div className='item-detail' key={item.id}>
         <div className='detail-img'>
