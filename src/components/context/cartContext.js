@@ -34,8 +34,8 @@ function CartContextProvider ({children}) {
             cartList[itemIndex].cantidad += item.cantidad //le sumo la cantidad elegida
         } else {
             setCartList ([...cartList, item]) // aca no deberia haber referencia a la cantidad del item?
-            totalItems()
         }
+        totalItems()
     }
 
     return (
