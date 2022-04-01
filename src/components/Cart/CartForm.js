@@ -25,6 +25,10 @@ const CartForm = () => {
         const db = getFirestore()
         const queryCollectionSet = collection(db, 'orders')
         addDoc(queryCollectionSet, orden)
+            .then(resp =>{
+                alert(`Tu orden esta siendo preparada. ORDEN: ${resp.id}`);
+                window.location = "/"
+            })
             .catch(err=>console.error(err))
             .finally(()=>console.log('Orden finalizada'))
     }
