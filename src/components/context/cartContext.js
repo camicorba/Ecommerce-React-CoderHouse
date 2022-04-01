@@ -21,13 +21,7 @@ function CartContextProvider ({children}) {
     }
     const totalItems = () => {
         setTotal(cartList.reduce((sum, item)=> sum + item.cantidad, 0))
-        // let qitems = 0
-        // cartList.forEach(item=> qitems+=item.cantidad)
-        // return qitems
     }
-    // const actualtotalItems = (id, cantidad) => {
-    //     cartList.find(item => item.id === id).cantidad += cantidad
-    // }
     const agregarCart = (item) =>{
         if (isInCart(item.id)){
             let itemIndex = cartList.findIndex(prod => prod.id === item.id) //busco el item duplicado en el array
