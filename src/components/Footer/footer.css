@@ -1,0 +1,36 @@
+.footer{
+    display: flex;
+    border-top: 2px solid #9fb9bf;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px 0px;
+}
+.footer-img{
+   width: 150px;
+   height: 150px;
+}
+.contacto-items{
+    list-style: none;
+    padding: 5px;
+    text-align: start;
+    align-items: center;
+}
+.contacto-items span{
+    padding-left: 10px;
+}
+.footer-redes{
+    padding: 5px;
+}
+.footer-icon{
+    color: #9fb9bf;
+    width: 30px;
+    height: 25px;
+}
+.copy{
+    background-color: #dcdcdc;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}

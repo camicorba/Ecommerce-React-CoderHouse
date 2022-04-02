@@ -1,4 +1,7 @@
 .menu-bar{
+    position: sticky;
+    z-index: 10;
+    top: 0px;
     background-color: #9fb9bf;
     display: flex;
     flex-direction: row;

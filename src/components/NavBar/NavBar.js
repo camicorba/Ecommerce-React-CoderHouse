@@ -11,16 +11,17 @@ const NavBar = () => {
             </div>
             <div className='menu'>
                 <ul className='menu-list'>
-                    <li className='menu-item'><Link to={'/'} className='menu-link'>INICIO</Link></li>
+                    <li className='menu-item'><Link to={'/'} className='menu-link'>HOME</Link></li>
                     <li className='menu-item'>
-                        <Link to={'/'} className='menu-link menu-desp'>PRODUCTOS</Link>
+                        <Link to={'/category'} className='menu-link menu-desp'>PRODUCTS</Link>
                         <ul className='submenu'>
-                            <Link to={'category/macetas'} className="submenu-link"><li>MACETAS</li></Link>
-                            <Link to={'category/cocina'} className="submenu-link"><li>COCINA</li></Link>
-                            <Link to={'category/floreros'} className="submenu-link"><li>FLOREROS</li></Link>
+                            <Link to={'category/tazas'} className="submenu-link"><li>CUPS</li></Link>
+                            <Link to={'category/macetas'} className="submenu-link"><li>POTS</li></Link>
+                            <Link to={'category/cocina'} className="submenu-link"><li>KITCHEN</li></Link>
+                            <Link to={'category/floreros'} className="submenu-link"><li>VASE</li></Link>
                         </ul>
                     </li>
-                    <li className='menu-item'><Link to={'/'} className='menu-link'>CONTACTO</Link></li>
+                    <li className='menu-item'><Link to={'/'} className='menu-link'>CONTACT</Link></li>
                 </ul>
             </div>
             <div>
