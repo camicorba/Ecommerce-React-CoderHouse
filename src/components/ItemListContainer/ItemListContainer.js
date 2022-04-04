@@ -35,7 +35,11 @@ function ItemListContainer() {
             loading? 
             <div className="loader"></div>
             :
+            <div>
+              <h2 className="title-cont">PRODUCTOS</h2>
             <ItemList items={items} />
+            </div>
+
         }
     </div>
   ) 

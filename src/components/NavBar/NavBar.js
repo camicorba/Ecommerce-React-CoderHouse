@@ -13,15 +13,15 @@ const NavBar = () => {
                 <ul className='menu-list'>
                     <li className='menu-item'><Link to={'/'} className='menu-link'>HOME</Link></li>
                     <li className='menu-item'>
-                        <Link to={'/category'} className='menu-link menu-desp'>PRODUCTS</Link>
+                        <Link to={'/category'} className='menu-link menu-desp'>PRODUCTOS</Link>
                         <ul className='submenu'>
-                            <Link to={'category/tazas'} className="submenu-link"><li>CUPS</li></Link>
-                            <Link to={'category/macetas'} className="submenu-link"><li>POTS</li></Link>
-                            <Link to={'category/cocina'} className="submenu-link"><li>KITCHEN</li></Link>
-                            <Link to={'category/floreros'} className="submenu-link"><li>VASE</li></Link>
+                            <Link to={'category/tazas'} className="submenu-link"><li>VASOS</li></Link>
+                            <Link to={'category/macetas'} className="submenu-link"><li>MACETA</li></Link>
+                            <Link to={'category/cocina'} className="submenu-link"><li>COCINA</li></Link>
+                            <Link to={'category/floreros'} className="submenu-link"><li>JARRONES</li></Link>
                         </ul>
                     </li>
-                    <li className='menu-item'><Link to={'/'} className='menu-link'>CONTACT</Link></li>
+                    <li className='menu-item'><Link to={'/'} className='menu-link'>CONTACTO</Link></li>
                 </ul>
             </div>
             <div>

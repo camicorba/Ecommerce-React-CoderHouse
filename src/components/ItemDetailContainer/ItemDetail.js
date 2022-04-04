@@ -14,7 +14,7 @@ const ItemDetail = ({item}) => {
   return (
     <div className='item-detail' key={item.id}>
         <div className='detail-img'>
-            <img src={item.image} alt={item.title} />
+            <img className='img-d' src={item.image} alt={item.title} />
         </div>
         <div className='detail'>
             <h1 className='detail-title'>{item.title}</h1>
@@ -24,7 +24,7 @@ const ItemDetail = ({item}) => {
             count?
             <Link to={'/cart'}>
               <div>
-                <button> Finalizar compra</button>
+                <button className='btn-shop'> Finalizar compra</button>
               </div>
             </Link>
             :

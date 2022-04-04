@@ -1,12 +1,14 @@
+@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dosis:wght@300&display=swap);
 *{
     box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
 }
 .contador{
     border: 1px solid black;
     border-radius: 10px;
-    width: 150px;
+    width: 100%;
     margin: auto;
-    background-color: #9fb9bf;
+    background-color: #dcdcdc;
 }
 .contador-control{
     display: flex;
@@ -14,12 +16,22 @@
     flex-wrap: nowrap;
     align-content: center;
     justify-content: space-between;
-    align-items: center;;
+    align-items: center;
+    font-size: 20px;
 }
-button{
+.control-btn{
     border: none;
     background-color: transparent;
     align-content: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btn-add{
+    padding: 5px 0;
+    border: none;
+    background-color: #dcdcdc;
+    text-transform: uppercase;
+    font-size: 15px;
     cursor: pointer;
 }
 p{
