@@ -11,6 +11,10 @@ const CartForm = () => {
 
     const generarOrden = async(e) =>{
         e.preventDefault();
+        const date = ()=>{
+            let fecha = new Date();
+            return fecha.getDate() + "/" + (fecha.getMonth() +1) + "/" + fecha.getFullYear();
+        }
         let orden= {};
         orden.buyer = dataForm
         orden.total= totalPrice()
@@ -20,6 +24,8 @@ const CartForm = () => {
             let price = cartItem.price
             return {id, title, price}
         })
+        orden.date= date()
+
         console.log(orden)
 
         const db = getFirestore()
