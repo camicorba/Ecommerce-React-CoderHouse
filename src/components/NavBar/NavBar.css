@@ -63,4 +63,19 @@
 
 .icon-white{
     color: white;
+    width: 25px;
+    height: 25px;
+    margin-top: 8px;
+}
+.cart-cantidad{
+    vertical-align: top;
+    padding: 2px 8px;
+    color: black;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    margin: -8px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
 }

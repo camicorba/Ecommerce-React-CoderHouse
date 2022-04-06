@@ -15,7 +15,7 @@ function CartWidget () {
             :
             <div>
                 <FontAwesomeIcon icon={faShoppingCart} className= "icon-white"/>
-                <span> {total}</span>
+                <span className="cart-cantidad"> {total}</span>
             </div>
             }
         </Link>
