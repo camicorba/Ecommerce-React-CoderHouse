@@ -2,20 +2,39 @@
 *{
     font-family: 'Dosis', sans-serif;
 }
+.cart{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
 .item-cart{
     list-style: none;
     border-bottom: 1px solid gray;
     padding: 10px;
     text-align: left;
     display: flex;
-}
-.cart{
+    height: 200px;
+    align-items: center;
     width: fit-content;
+}
+.cart-prod{
+    width: 90%;
     margin: auto;
-    margin-top: 20px;
+}
+.item-delete{
+cursor: pointer;
+height: 20px;
+}
+.item-delete:hover{
+    height: 20px;
+    color: #ea4c46;
 }
 .btn-cart{
     width: auto;
     background-color: #9fb9bf;
     border: 1px solid gray;
+    border-radius: 50%;
+    height: 20px;
+    padding: 15px 10px;
+    vertical-align: middle;
 }

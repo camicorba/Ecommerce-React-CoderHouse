@@ -1,9 +1,11 @@
 import './Cart.css'
 import { useCartContext } from "../context/cartContext";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Cart(){
-    const {cartList, vaciarCart, eliminarItem, totalPrice} = useCartContext()
+    const {cartList, vaciarCart, eliminarItem, totalPrice, subtotalPrice} = useCartContext()
     console.log(cartList)
     if (cartList.length === 0) {
         return (
@@ -18,8 +20,12 @@ return (
             <h2 className='title-cont'>Detalle de tu compra</h2>
             {cartList.map (item =>
             <div className="item-cart" key={item.id}>
-                <li> Producto: {item.title} Precio: $ {item.price} Cantidad: {item.cantidad}</li>
-                <button className="btn-cart" onClick={()=> eliminarItem(item.id)}>Eliminar</button>
+                <img alt='product' src={item.image}/>
+                <div className='cart-prod'> Producto: {item.title} X {item.cantidad}</div>
+                <div> Precio unitario: $ {item.price}</div>
+                <div> Subtotal: $ {subtotalPrice(item.cantidad, item.price)}</div>
+                <FontAwesomeIcon className='item-delete' icon={faTrashCan} onClick={()=> eliminarItem(item.id)}/>
+
             </div>
             )}
             <h4>Total de tu compra: $ {totalPrice()}</h4>

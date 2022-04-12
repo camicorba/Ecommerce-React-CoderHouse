@@ -19,6 +19,9 @@ function CartContextProvider ({children}) {
         cartList.forEach(item=> price += item.price * item.cantidad)
         return price
     }
+    const subtotalPrice = (cantidad, price) =>{
+        return cantidad*price
+    }
     const totalItems = () => {
         setTotal(cartList.reduce((sum, item)=> sum + item.cantidad, 0))
     }
@@ -41,6 +44,7 @@ function CartContextProvider ({children}) {
             isInCart,
             eliminarItem,
             totalPrice,
+            subtotalPrice,
             totalItems
         }}>
             {children}
