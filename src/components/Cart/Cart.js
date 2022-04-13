@@ -20,10 +20,11 @@ return (
             <h2 className='title-cont'>Detalle de tu compra</h2>
             {cartList.map (item =>
             <div className="item-cart" key={item.id}>
-                <img alt='product' src={item.image}/>
-                <div className='cart-prod'> Producto: {item.title} X {item.cantidad}</div>
-                <div> Precio unitario: $ {item.price}</div>
-                <div> Subtotal: $ {subtotalPrice(item.cantidad, item.price)}</div>
+                <img className='cart-img' alt='product' src={item.image}/>
+                <div className='cart-content'><b>Producto</b><br/>{item.title}</div>
+                <div className='cart-content'><b>Unidades</b><br/>{item.cantidad}</div>
+                <div className='cart-content'><b>Precio unitario</b><br/> $ {item.price}</div>
+                <div className='cart-content'><b>Subtotal</b><br/> $ {subtotalPrice(item.cantidad, item.price)}</div>
                 <FontAwesomeIcon className='item-delete' icon={faTrashCan} onClick={()=> eliminarItem(item.id)}/>
 
             </div>

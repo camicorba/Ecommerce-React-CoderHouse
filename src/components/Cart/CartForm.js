@@ -7,8 +7,6 @@ const CartForm = () => {
     const [dataForm, setdataForm] = useState({
         name:'', phone:'', email:'', adress:'', city:''
     })
-    // const [id, setid] = useState('')
-
     const generarOrden = async(e) =>{
         e.preventDefault();
         const date = ()=>{
@@ -25,9 +23,6 @@ const CartForm = () => {
             return {id, title, price}
         })
         orden.date= date()
-
-        console.log(orden)
-
         const db = getFirestore()
         const queryCollectionSet = collection(db, 'orders')
         addDoc(queryCollectionSet, orden)
@@ -41,33 +36,28 @@ const CartForm = () => {
     const handleChange = (e)=>{
         setdataForm({ ...dataForm, [e.target.name]: e.target.value})
     }
-    console.log(dataForm)
-
     return(
         <div className="cont-form">
-            <h2>Completa tus datos:</h2>
+            <h2 className='title-cont'>Completa tus datos:</h2>
             <form  onSubmit={generarOrden}>
-                <h3>Datos de Contacto</h3>
-                <input type='text' name='name' value={dataForm.name} onChange={handleChange} placeholder='Nombre Completo'></input>
+                <h3 className='title-sec'>Datos de Contacto</h3>
+                <input className="input" type='text' name='name' value={dataForm.name} onChange={handleChange} required placeholder='Nombre Completo'></input>
                 <br/>
-                <input type='number' name='phone' value={dataForm.phone} onChange={handleChange} placeholder='Telefono'></input>
+                <input className="input" type='number' name='phone' value={dataForm.phone} onChange={handleChange} pattern="[0-9]{10}" placeholder='Telefono'></input>
                 <br/>
-                <input type='email' name='email' value={dataForm.email} onChange={handleChange} placeholder='Email'></input>
+                <input className="input" type='email' name='email' value={dataForm.email} onChange={handleChange} required placeholder='Email'></input>
                 <br/>
                 <input type='checkbox' value='check'></input>
-                <p>Deseo recibir ofertas y novedades al mail</p>
+                <span>Deseo recibir ofertas y novedades al mail</span>
                 <br/>
                 <h3>Datos de Envio</h3>
-                <input type='text' name='adress' value={dataForm.adress} onChange={handleChange} placeholder='Direccion'></input>
+                <input className="input" type='text' name='adress' value={dataForm.adress} onChange={handleChange} placeholder='Direccion'></input>
                 <br/>
-                <input type='text' name='city' value={dataForm.city} onChange={handleChange} placeholder='Ciudad'></input>
+                <input className="input" type='text' name='city' value={dataForm.city} onChange={handleChange} placeholder='Ciudad'></input>
                 <br/>
                 <button>Confirmar datos</button>
             </form>
-            
-
         </div>
     )
-
 }
 export default CartForm

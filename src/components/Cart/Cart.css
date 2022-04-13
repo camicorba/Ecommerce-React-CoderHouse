@@ -1,11 +1,12 @@
 @import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dosis:wght@300&display=swap);
 *{
     font-family: 'Dosis', sans-serif;
+    box-sizing: border-box;
 }
 .cart{
     width: fit-content;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .item-cart{
     list-style: none;
@@ -16,10 +17,19 @@
     height: 200px;
     align-items: center;
     width: fit-content;
+    margin: 5px;
 }
-.cart-prod{
-    width: 90%;
-    margin: auto;
+.cart-content{
+    padding: 10px;
+    text-align: center;
+}
+.cart-img{
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid gainsboro;
+    padding: 10px;
+    margin: 5px;
+
 }
 .item-delete{
 cursor: pointer;
@@ -37,4 +47,19 @@ height: 20px;
     height: 20px;
     padding: 15px 10px;
     vertical-align: middle;
+}
+.cont-form{
+    width: 70%;
+    margin: auto;
+}
+.input{
+    width: 400px;
+    height: 40px;
+    margin: 8px;
+
+}
+.title-sec{
+    font-size: 20px;
+    margin: 15px;
+    padding: 10px 0;
 }

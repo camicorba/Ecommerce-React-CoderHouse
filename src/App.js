@@ -8,6 +8,7 @@ import CartContextProvider from './components/context/cartContext';
 import CartForm from './components/Cart/CartForm';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path='/item/:idItem' element={<ItemDetailContainer/>}/>
               <Route path='/cart' element={<Cart/>}/>
               <Route path='/form' element={<CartForm/>}/>
+              <Route path='/contact' element={<Contact/>}/>
             </Routes>
           </header>
           <Footer/>

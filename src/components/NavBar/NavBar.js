@@ -21,7 +21,7 @@ const NavBar = () => {
                             <Link to={'category/floreros'} className="submenu-link"><li>JARRONES</li></Link>
                         </ul>
                     </li>
-                    <li className='menu-item'><Link to={'/'} className='menu-link'>CONTACTO</Link></li>
+                    <li className='menu-item'><Link to={'/contact'} className='menu-link'>CONTACTO</Link></li>
                 </ul>
             </div>
             <div>
