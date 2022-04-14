@@ -12,7 +12,7 @@ const Footer = () =>{
                     <h3>CONTACTO</h3>
                     <li className='contacto-items'>
                         <FontAwesomeIcon className='footer-icon' icon={faMapPin} />
-                        <span>Gral. Rodriguez 730, Tandil</span>
+                        <span>Gral. Paz N°423, Tandil</span>
                     </li>
                     <li className='contacto-items'>
                         <FontAwesomeIcon className='footer-icon' icon={faPhone} />
