@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect} from "react";
+import { createContext, useContext, useState} from "react";
 const CartContext = createContext ([])
 export const useCartContext = () => useContext(CartContext)
 
@@ -27,10 +27,10 @@ function CartContextProvider ({children}) {
     }
     const agregarCart = (item) =>{
         if (isInCart(item.id)){
-            let itemIndex = cartList.findIndex(prod => prod.id === item.id) //busco el item duplicado en el array
-            cartList[itemIndex].cantidad += item.cantidad //le sumo la cantidad elegida
+            let itemIndex = cartList.findIndex(prod => prod.id === item.id)
+            cartList[itemIndex].cantidad += item.cantidad
         } else {
-            setCartList ([...cartList, item]) // aca no deberia haber referencia a la cantidad del item?
+            setCartList ([...cartList, item])
         }
         totalItems()
     }

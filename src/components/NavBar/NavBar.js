@@ -7,7 +7,6 @@ const NavBar = () => {
         <div className='menu-bar'>
             <div>
                 <Link to={'/'}><img className='menu-logo' alt="logo" src={ logoh1 } /></Link>
-
             </div>
             <div className='menu'>
                 <ul className='menu-list'>
@@ -26,9 +25,7 @@ const NavBar = () => {
             </div>
             <div>
                 <CartWidget/>
-
             </div>
-
         </div>
     )
 }

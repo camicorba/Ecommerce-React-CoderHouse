@@ -11,7 +11,6 @@ const Header=()=>{
                     <Link to='/category'>
                         <button className='header-btn'>EXPLORAR</button>
                     </Link>
-
                 </div>
             </div>
             <ItemListContainer/>

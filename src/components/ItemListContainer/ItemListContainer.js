@@ -10,7 +10,6 @@ function ItemListContainer() {
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true) 
-
     const { idCategory } = useParams ();
 
     useEffect(() => {
@@ -39,7 +38,6 @@ function ItemListContainer() {
               <h2 className="title-cont">PRODUCTOS</h2>
             <ItemList items={items} />
             </div>
-
         }
     </div>
   ) 

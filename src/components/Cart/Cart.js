@@ -26,7 +26,6 @@ return (
                 <div className='cart-content'><b>Precio unitario</b><br/> $ {item.price}</div>
                 <div className='cart-content'><b>Subtotal</b><br/> $ {subtotalPrice(item.cantidad, item.price)}</div>
                 <FontAwesomeIcon className='item-delete' icon={faTrashCan} onClick={()=> eliminarItem(item.id)}/>
-
             </div>
             )}
             <h4>Total de tu compra: $ {totalPrice()}</h4>
